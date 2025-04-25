@@ -1,0 +1,544 @@
+🖥  Using device : cuda
+Loaded: (2555904, 1024, 2) (2555904, 24) (2555904,)
+After SNR filter : (2260992, 1024, 2)
+Train: (2260992, 1024, 2)  Test: (2260992, 1024, 2)
+💡 first batch shape : torch.Size([32, 2, 1, 1024])
+RMLNet(
+  (model): Sequential(
+    (0): Sequential(
+      (0): Conv2d(2, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1))
+      (1): BatchNorm2d(64, eps=0.001, momentum=0.99, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+      (3): MaxPool2d(kernel_size=(1, 2), stride=(1, 2), padding=0, dilation=1, ceil_mode=False)
+    )
+    (1): Sequential(
+      (0): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1))
+      (1): BatchNorm2d(64, eps=0.001, momentum=0.99, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+      (3): MaxPool2d(kernel_size=(1, 2), stride=(1, 2), padding=0, dilation=1, ceil_mode=False)
+    )
+    (2): Sequential(
+      (0): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1))
+      (1): BatchNorm2d(64, eps=0.001, momentum=0.99, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+      (3): MaxPool2d(kernel_size=(1, 2), stride=(1, 2), padding=0, dilation=1, ceil_mode=False)
+    )
+    (3): Sequential(
+      (0): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1))
+      (1): BatchNorm2d(64, eps=0.001, momentum=0.99, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+      (3): MaxPool2d(kernel_size=(1, 2), stride=(1, 2), padding=0, dilation=1, ceil_mode=False)
+    )
+    (4): Sequential(
+      (0): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1))
+      (1): BatchNorm2d(64, eps=0.001, momentum=0.99, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+      (3): MaxPool2d(kernel_size=(1, 2), stride=(1, 2), padding=0, dilation=1, ceil_mode=False)
+    )
+    (5): Sequential(
+      (0): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1))
+      (1): BatchNorm2d(64, eps=0.001, momentum=0.99, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+      (3): AvgPool2d(kernel_size=(1, 16), stride=(1, 16), padding=0)
+    )
+    (6): Flatten(start_dim=1, end_dim=-1)
+    (7): Linear(in_features=128, out_features=128, bias=True)
+    (8): ReLU(inplace=True)
+    (9): Dropout(p=0.5, inplace=False)
+    (10): Linear(in_features=128, out_features=24, bias=True)
+  )
+)
+Epoch   1 | train loss  1.5177 acc  0.445 | val loss  1.2910 acc  0.522
+Epoch   2 | train loss  1.2955 acc  0.528 | val loss  1.6226 acc  0.545
+Epoch   3 | train loss  1.2294 acc  0.553 | val loss  1.1596 acc  0.586
+Epoch   4 | train loss  1.1988 acc  0.567 | val loss  1.1862 acc  0.584
+Epoch   5 | train loss  1.1790 acc  0.576 | val loss  1.1714 acc  0.584
+Epoch   6 | train loss  1.1632 acc  0.582 | val loss  1.2566 acc  0.570
+Epoch   7 | train loss  1.1532 acc  0.586 | val loss  1.1956 acc  0.607
+Epoch   8 | train loss  1.1446 acc  0.590 | val loss  1.4539 acc  0.585
+⏹  Early stopping triggered.
+
+Test‑set  loss : 1.1596 | accuracy : 0.5860
+✅  Saved confmat_snr_-14.png
+
+📊  Classification report for SNR -14 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       0.31      0.00      0.00      4096
+        4ASK       0.09      0.00      0.00      4096
+        BPSK       0.10      0.02      0.04      4096
+        QPSK       0.17      0.14      0.16      4096
+        8PSK       0.11      0.00      0.00      4096
+       16QAM       0.00      0.00      0.00      4096
+   AM-SSB-SC       0.09      0.49      0.16      4096
+   AM-DSB-SC       0.00      0.00      0.00      4096
+          FM       0.10      0.00      0.00      4096
+        GMSK       0.09      0.03      0.04      4096
+       OQPSK       0.00      0.00      0.00      4096
+
+   micro avg       0.10      0.06      0.08     45056
+   macro avg       0.10      0.06      0.04     45056
+weighted avg       0.10      0.06      0.04     45056
+
+✅  Saved confmat_snr_-12.png
+
+📊  Classification report for SNR -12 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       0.00      0.00      0.00      4096
+        4ASK       0.08      0.00      0.00      4096
+        BPSK       0.10      0.02      0.04      4096
+        QPSK       0.29      0.29      0.29      4096
+        8PSK       0.03      0.00      0.00      4096
+       16QAM       0.00      0.00      0.00      4096
+   AM-SSB-SC       0.09      0.50      0.16      4096
+   AM-DSB-SC       0.00      0.00      0.00      4096
+          FM       0.12      0.00      0.01      4096
+        GMSK       0.08      0.03      0.04      4096
+       OQPSK       0.00      0.00      0.00      4096
+
+   micro avg       0.12      0.08      0.09     45056
+   macro avg       0.07      0.08      0.05     45056
+weighted avg       0.07      0.08      0.05     45056
+
+✅  Saved confmat_snr_-10.png
+
+📊  Classification report for SNR -10 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       0.50      0.00      0.00      4096
+        4ASK       0.08      0.00      0.00      4096
+        BPSK       0.10      0.02      0.04      4096
+        QPSK       0.51      0.66      0.58      4096
+        8PSK       0.08      0.00      0.00      4096
+       16QAM       0.00      0.00      0.00      4096
+   AM-SSB-SC       0.10      0.53      0.17      4096
+   AM-DSB-SC       0.00      0.00      0.00      4096
+          FM       0.21      0.01      0.02      4096
+        GMSK       0.11      0.04      0.05      4096
+       OQPSK       0.00      0.00      0.00      4096
+
+   micro avg       0.17      0.12      0.14     45056
+   macro avg       0.15      0.12      0.08     45056
+weighted avg       0.15      0.12      0.08     45056
+
+✅  Saved confmat_snr_-8.png
+
+📊  Classification report for SNR -8 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       0.20      0.00      0.00      4096
+        4ASK       0.09      0.00      0.00      4096
+        BPSK       0.10      0.02      0.04      4096
+        QPSK       0.63      0.96      0.76      4096
+        8PSK       0.12      0.00      0.00      4096
+       16QAM       0.25      0.00      0.00      4096
+   AM-SSB-SC       0.10      0.58      0.17      4096
+   AM-DSB-SC       0.00      0.00      0.00      4096
+          FM       0.55      0.10      0.16      4096
+        GMSK       0.10      0.03      0.05      4096
+       OQPSK       0.00      0.00      0.00      4096
+
+   micro avg       0.21      0.15      0.18     45056
+   macro avg       0.19      0.15      0.11     45056
+weighted avg       0.19      0.15      0.11     45056
+
+✅  Saved confmat_snr_-6.png
+
+📊  Classification report for SNR -6 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       0.18      0.01      0.02      4096
+        4ASK       0.16      0.00      0.00      4096
+        BPSK       0.12      0.04      0.06      4096
+        QPSK       0.78      0.99      0.87      4096
+        8PSK       0.12      0.01      0.02      4096
+       16QAM       0.09      0.00      0.00      4096
+   AM-SSB-SC       0.11      0.56      0.18      4096
+   AM-DSB-SC       0.18      0.00      0.00      4096
+          FM       0.76      0.71      0.74      4096
+        GMSK       0.09      0.08      0.08      4096
+       OQPSK       0.08      0.02      0.03      4096
+
+   micro avg       0.27      0.22      0.24     45056
+   macro avg       0.24      0.22      0.18     45056
+weighted avg       0.24      0.22      0.18     45056
+
+✅  Saved confmat_snr_-4.png
+
+📊  Classification report for SNR -4 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       0.50      0.55      0.52      4096
+        4ASK       0.12      0.00      0.01      4096
+        BPSK       0.12      0.04      0.06      4096
+        QPSK       0.99      0.94      0.97      4096
+        8PSK       0.16      0.02      0.03      4096
+       16QAM       0.26      0.05      0.08      4096
+   AM-SSB-SC       0.12      0.04      0.06      4096
+   AM-DSB-SC       0.10      0.00      0.00      4096
+          FM       0.89      1.00      0.94      4096
+        GMSK       0.13      0.17      0.15      4096
+       OQPSK       0.13      0.45      0.21      4096
+
+   micro avg       0.37      0.30      0.33     45056
+   macro avg       0.32      0.30      0.28     45056
+weighted avg       0.32      0.30      0.28     45056
+
+✅  Saved confmat_snr_-2.png
+
+📊  Classification report for SNR -2 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       0.83      0.99      0.90      4096
+        4ASK       0.17      0.01      0.01      4096
+        BPSK       0.20      0.30      0.24      4096
+        QPSK       1.00      0.83      0.91      4096
+        8PSK       0.38      0.24      0.29      4096
+       16QAM       0.51      0.55      0.53      4096
+   AM-SSB-SC       0.19      0.02      0.04      4096
+   AM-DSB-SC       0.12      0.00      0.00      4096
+          FM       0.99      1.00      1.00      4096
+        GMSK       0.41      0.28      0.33      4096
+       OQPSK       0.31      0.44      0.37      4096
+
+   micro avg       0.55      0.42      0.48     45056
+   macro avg       0.46      0.42      0.42     45056
+weighted avg       0.46      0.42      0.42     45056
+
+✅  Saved confmat_snr_0.png
+
+📊  Classification report for SNR 0 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       0.99      1.00      1.00      4096
+        4ASK       0.28      0.02      0.03      4096
+        BPSK       0.53      0.39      0.45      4096
+        QPSK       1.00      0.62      0.76      4096
+        8PSK       0.40      0.66      0.50      4096
+       16QAM       0.73      0.96      0.83      4096
+   AM-SSB-SC       0.29      0.03      0.05      4096
+   AM-DSB-SC       0.19      0.00      0.00      4096
+          FM       1.00      1.00      1.00      4096
+        GMSK       0.86      0.70      0.77      4096
+       OQPSK       0.82      0.51      0.63      4096
+
+   micro avg       0.74      0.54      0.62     45056
+   macro avg       0.64      0.54      0.55     45056
+weighted avg       0.64      0.54      0.55     45056
+
+✅  Saved confmat_snr_2.png
+
+📊  Classification report for SNR 2 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.34      0.18      0.23      4096
+        BPSK       0.92      0.51      0.65      4096
+        QPSK       1.00      0.50      0.66      4096
+        8PSK       0.58      0.68      0.63      4096
+       16QAM       0.96      1.00      0.98      4096
+   AM-SSB-SC       0.36      0.11      0.17      4096
+   AM-DSB-SC       0.50      0.02      0.04      4096
+          FM       1.00      1.00      1.00      4096
+        GMSK       0.99      0.98      0.99      4096
+       OQPSK       0.99      0.60      0.74      4096
+
+   micro avg       0.85      0.60      0.70     45056
+   macro avg       0.78      0.60      0.64     45056
+weighted avg       0.78      0.60      0.64     45056
+
+✅  Saved confmat_snr_4.png
+
+📊  Classification report for SNR 4 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.51      0.42      0.46      4096
+        BPSK       0.99      0.75      0.85      4096
+        QPSK       1.00      0.70      0.82      4096
+        8PSK       0.86      0.81      0.84      4096
+       16QAM       0.99      1.00      1.00      4096
+   AM-SSB-SC       0.56      0.24      0.33      4096
+   AM-DSB-SC       0.61      0.11      0.19      4096
+          FM       0.99      1.00      1.00      4096
+        GMSK       1.00      0.99      1.00      4096
+       OQPSK       1.00      0.80      0.89      4096
+
+   micro avg       0.91      0.71      0.80     45056
+   macro avg       0.87      0.71      0.76     45056
+weighted avg       0.87      0.71      0.76     45056
+
+✅  Saved confmat_snr_6.png
+
+📊  Classification report for SNR 6 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.66      0.60      0.63      4096
+        BPSK       1.00      0.95      0.97      4096
+        QPSK       1.00      0.81      0.90      4096
+        8PSK       0.94      0.97      0.96      4096
+       16QAM       1.00      1.00      1.00      4096
+   AM-SSB-SC       0.73      0.42      0.53      4096
+   AM-DSB-SC       0.71      0.23      0.35      4096
+          FM       0.99      1.00      1.00      4096
+        GMSK       1.00      0.99      1.00      4096
+       OQPSK       1.00      0.89      0.94      4096
+
+   micro avg       0.93      0.81      0.86     45056
+   macro avg       0.91      0.81      0.84     45056
+weighted avg       0.91      0.81      0.84     45056
+
+✅  Saved confmat_snr_8.png
+
+📊  Classification report for SNR 8 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.70      0.71      0.70      4096
+        BPSK       1.00      0.99      1.00      4096
+        QPSK       1.00      0.85      0.92      4096
+        8PSK       0.97      0.99      0.98      4096
+       16QAM       1.00      1.00      1.00      4096
+   AM-SSB-SC       0.77      0.57      0.65      4096
+   AM-DSB-SC       0.84      0.27      0.41      4096
+          FM       0.99      1.00      0.99      4096
+        GMSK       1.00      0.99      0.99      4096
+       OQPSK       1.00      0.91      0.95      4096
+
+   micro avg       0.94      0.84      0.89     45056
+   macro avg       0.93      0.84      0.87     45056
+weighted avg       0.93      0.84      0.87     45056
+
+✅  Saved confmat_snr_10.png
+
+📊  Classification report for SNR 10 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.72      0.74      0.73      4096
+        BPSK       1.00      1.00      1.00      4096
+        QPSK       1.00      0.85      0.92      4096
+        8PSK       0.97      1.00      0.98      4096
+       16QAM       1.00      1.00      1.00      4096
+   AM-SSB-SC       0.78      0.63      0.70      4096
+   AM-DSB-SC       0.89      0.30      0.45      4096
+          FM       0.98      1.00      0.99      4096
+        GMSK       1.00      0.98      0.99      4096
+       OQPSK       1.00      0.92      0.96      4096
+
+   micro avg       0.94      0.86      0.90     45056
+   macro avg       0.94      0.86      0.88     45056
+weighted avg       0.94      0.86      0.88     45056
+
+✅  Saved confmat_snr_12.png
+
+📊  Classification report for SNR 12 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.75      0.77      0.76      4096
+        BPSK       1.00      1.00      1.00      4096
+        QPSK       1.00      0.86      0.92      4096
+        8PSK       0.98      1.00      0.99      4096
+       16QAM       1.00      1.00      1.00      4096
+   AM-SSB-SC       0.79      0.68      0.73      4096
+   AM-DSB-SC       0.92      0.31      0.46      4096
+          FM       0.98      1.00      0.99      4096
+        GMSK       1.00      0.98      0.99      4096
+       OQPSK       1.00      0.92      0.96      4096
+
+   micro avg       0.95      0.86      0.91     45056
+   macro avg       0.95      0.86      0.89     45056
+weighted avg       0.95      0.86      0.89     45056
+
+✅  Saved confmat_snr_14.png
+
+📊  Classification report for SNR 14 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.73      0.76      0.75      4096
+        BPSK       1.00      1.00      1.00      4096
+        QPSK       1.00      0.86      0.92      4096
+        8PSK       0.98      1.00      0.99      4096
+       16QAM       1.00      1.00      1.00      4096
+   AM-SSB-SC       0.78      0.67      0.72      4096
+   AM-DSB-SC       0.91      0.30      0.45      4096
+          FM       0.98      1.00      0.99      4096
+        GMSK       1.00      0.98      0.99      4096
+       OQPSK       1.00      0.93      0.96      4096
+
+   micro avg       0.95      0.86      0.90     45056
+   macro avg       0.94      0.86      0.89     45056
+weighted avg       0.94      0.86      0.89     45056
+
+✅  Saved confmat_snr_16.png
+
+📊  Classification report for SNR 16 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.75      0.77      0.76      4096
+        BPSK       1.00      1.00      1.00      4096
+        QPSK       1.00      0.87      0.93      4096
+        8PSK       0.98      1.00      0.99      4096
+       16QAM       1.00      1.00      1.00      4096
+   AM-SSB-SC       0.79      0.69      0.74      4096
+   AM-DSB-SC       0.92      0.32      0.47      4096
+          FM       0.98      1.00      0.99      4096
+        GMSK       1.00      0.98      0.99      4096
+       OQPSK       1.00      0.92      0.96      4096
+
+   micro avg       0.95      0.87      0.91     45056
+   macro avg       0.95      0.87      0.89     45056
+weighted avg       0.95      0.87      0.89     45056
+
+✅  Saved confmat_snr_18.png
+
+📊  Classification report for SNR 18 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.74      0.78      0.76      4096
+        BPSK       1.00      1.00      1.00      4096
+        QPSK       1.00      0.88      0.93      4096
+        8PSK       0.98      1.00      0.99      4096
+       16QAM       1.00      1.00      1.00      4096
+   AM-SSB-SC       0.79      0.68      0.73      4096
+   AM-DSB-SC       0.93      0.30      0.46      4096
+          FM       0.98      1.00      0.99      4096
+        GMSK       1.00      0.98      0.99      4096
+       OQPSK       1.00      0.93      0.96      4096
+
+   micro avg       0.95      0.87      0.91     45056
+   macro avg       0.95      0.87      0.89     45056
+weighted avg       0.95      0.87      0.89     45056
+
+✅  Saved confmat_snr_20.png
+
+📊  Classification report for SNR 20 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.75      0.77      0.76      4096
+        BPSK       1.00      1.00      1.00      4096
+        QPSK       1.00      0.86      0.93      4096
+        8PSK       0.98      1.00      0.99      4096
+       16QAM       1.00      1.00      1.00      4096
+   AM-SSB-SC       0.78      0.67      0.72      4096
+   AM-DSB-SC       0.94      0.33      0.49      4096
+          FM       0.98      1.00      0.99      4096
+        GMSK       1.00      0.98      0.99      4096
+       OQPSK       1.00      0.93      0.96      4096
+
+   micro avg       0.95      0.87      0.91     45056
+   macro avg       0.95      0.87      0.89     45056
+weighted avg       0.95      0.87      0.89     45056
+
+✅  Saved confmat_snr_22.png
+
+📊  Classification report for SNR 22 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.75      0.78      0.76      4096
+        BPSK       1.00      1.00      1.00      4096
+        QPSK       1.00      0.87      0.93      4096
+        8PSK       0.98      1.00      0.99      4096
+       16QAM       1.00      1.00      1.00      4096
+   AM-SSB-SC       0.79      0.67      0.72      4096
+   AM-DSB-SC       0.92      0.32      0.47      4096
+          FM       0.98      1.00      0.99      4096
+        GMSK       1.00      0.98      0.99      4096
+       OQPSK       1.00      0.93      0.96      4096
+
+   micro avg       0.95      0.87      0.91     45056
+   macro avg       0.95      0.87      0.89     45056
+weighted avg       0.95      0.87      0.89     45056
+
+✅  Saved confmat_snr_24.png
+
+📊  Classification report for SNR 24 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.75      0.77      0.76      4096
+        BPSK       1.00      1.00      1.00      4096
+        QPSK       1.00      0.87      0.93      4096
+        8PSK       0.98      1.00      0.99      4096
+       16QAM       1.00      1.00      1.00      4096
+   AM-SSB-SC       0.78      0.68      0.73      4096
+   AM-DSB-SC       0.93      0.34      0.49      4096
+          FM       0.98      1.00      0.99      4096
+        GMSK       1.00      0.98      0.99      4096
+       OQPSK       1.00      0.92      0.96      4096
+
+   micro avg       0.95      0.87      0.91     45056
+   macro avg       0.95      0.87      0.89     45056
+weighted avg       0.95      0.87      0.89     45056
+
+✅  Saved confmat_snr_26.png
+
+📊  Classification report for SNR 26 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.75      0.77      0.76      4096
+        BPSK       1.00      1.00      1.00      4096
+        QPSK       1.00      0.86      0.93      4096
+        8PSK       0.98      1.00      0.99      4096
+       16QAM       1.00      1.00      1.00      4096
+   AM-SSB-SC       0.79      0.68      0.73      4096
+   AM-DSB-SC       0.92      0.31      0.46      4096
+          FM       0.98      1.00      0.99      4096
+        GMSK       1.00      0.98      0.99      4096
+       OQPSK       1.00      0.93      0.96      4096
+
+   micro avg       0.95      0.87      0.91     45056
+   macro avg       0.95      0.87      0.89     45056
+weighted avg       0.95      0.87      0.89     45056
+
+✅  Saved confmat_snr_28.png
+
+📊  Classification report for SNR 28 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.74      0.76      0.75      4096
+        BPSK       1.00      1.00      1.00      4096
+        QPSK       1.00      0.87      0.93      4096
+        8PSK       0.98      1.00      0.99      4096
+       16QAM       1.00      1.00      1.00      4096
+   AM-SSB-SC       0.78      0.68      0.73      4096
+   AM-DSB-SC       0.92      0.32      0.47      4096
+          FM       0.98      1.00      0.99      4096
+        GMSK       1.00      0.98      0.99      4096
+       OQPSK       1.00      0.93      0.96      4096
+
+   micro avg       0.95      0.87      0.91     45056
+   macro avg       0.95      0.87      0.89     45056
+weighted avg       0.95      0.87      0.89     45056
+
+✅  Saved confmat_snr_30.png
+
+📊  Classification report for SNR 30 dB (easy classes):
+              precision    recall  f1-score   support
+
+         OOK       1.00      1.00      1.00      4096
+        4ASK       0.75      0.77      0.76      4096
+        BPSK       1.00      1.00      1.00      4096
+        QPSK       1.00      0.87      0.93      4096
+        8PSK       0.98      1.00      0.99      4096
+       16QAM       1.00      1.00      1.00      4096
+   AM-SSB-SC       0.79      0.68      0.73      4096
+   AM-DSB-SC       0.91      0.32      0.47      4096
+          FM       0.98      1.00      0.99      4096
+        GMSK       1.00      0.98      0.99      4096
+       OQPSK       1.00      0.93      0.97      4096
+
+   micro avg       0.95      0.87      0.91     45056
+   macro avg       0.95      0.87      0.89     45056
+weighted avg       0.95      0.87      0.89     45056
+
