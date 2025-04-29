@@ -70,7 +70,7 @@ visited = {'32PSK', '16APSK', '32QAM', 'FM', 'GMSK', '32APSK', 'OQPSK', '8ASK',
 for label_tuple, samples in data.items():
     mod_type = label_tuple[0]
 
-    if mod_type not in visited2:
+    if mod_type not in visited3:
         continue
 
     if mod_type not in mod_to_idx:
@@ -127,7 +127,7 @@ print("💡 first batch shape :", xb_chk.shape)   # expect (32, 2, 1, 1024)
 # 6.  CNN architecture (PyTorch)
 # ------------------------------
 class RMLNet(nn.Module):
-    def __init__(self, n_classes=11, dropout=0.5):
+    def __init__(self, n_classes=10, dropout=0.5):
         super().__init__()
         def conv_block(in_ch):
             block = nn.Sequential(
@@ -191,7 +191,7 @@ optimizer = torch.optim.Adam(net.parameters(), lr=lr, eps=1e-7)
 best_val_loss = np.inf
 patience      = 5
 patience_cnt  = 0
-ckpt_path     = Path("rml2018_best_arielle.pt")
+ckpt_path     = Path("rml2018_best_dat.pt")
 
 # -----------------------
 # 8.  Training loop
